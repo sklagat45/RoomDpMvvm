@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">RoomDbTest</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="add_list">add list</string>
+    <string name="user_name">User Name</string>
+    <string name="your_age">Your Age</string>
+    <string name="email">Email</string>
+</resources>
