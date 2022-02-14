@@ -3,10 +3,11 @@ package com.srklagat.roomdbtest.fragments.list
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.appcompat.view.menu.ActionMenuItemView
+import androidx.navigation.findNavController
+import androidx.navigation.fragment.FragmentNavigatorDestinationBuilder
 import androidx.recyclerview.widget.RecyclerView
 import com.srklagat.roomdbtest.R
-import com.srklagat.roomdbtest.data.User
+import com.srklagat.roomdbtest.models.User
 import kotlinx.android.synthetic.main.row_name_layout.view.*
 
 class ListAdapter :RecyclerView.Adapter<ListAdapter.MyViewHolder>() {
@@ -30,15 +31,22 @@ class ListAdapter :RecyclerView.Adapter<ListAdapter.MyViewHolder>() {
         holder.itemView.email_tv.text = currentItem.userEmail
         holder.itemView.age_tv.text = currentItem.age.toString()
 
+        holder.itemView.row_user_layout.setOnClickListener{
+            val action =ListFragmentDirections.actionListFragmentToUpdateFragment(currentItem)
+            holder.itemView.findNavController().navigate(action)
+        }
     }
+
 
     override fun getItemCount(): Int {
 
         return userList.size
     }
 
+
     fun setData(user: List<User>) {
         this.userList= user
         notifyDataSetChanged()
     }
+
 }

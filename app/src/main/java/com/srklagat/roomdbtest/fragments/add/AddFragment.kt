@@ -10,8 +10,8 @@ import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.srklagat.roomdbtest.R
-import com.srklagat.roomdbtest.data.User
-import com.srklagat.roomdbtest.data.UserViewModel
+import com.srklagat.roomdbtest.models.User
+import com.srklagat.roomdbtest.viewModel.UserViewModel
 import kotlinx.android.synthetic.main.fragment_add.*
 import kotlinx.android.synthetic.main.fragment_add.view.*
 

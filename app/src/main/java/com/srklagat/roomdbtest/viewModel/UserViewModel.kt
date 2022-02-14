@@ -1,12 +1,12 @@
-package com.srklagat.roomdbtest.data
+package com.srklagat.roomdbtest.viewModel
 
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.viewModelScope
-import com.srklagat.roomdbtest.data.User
+import com.srklagat.roomdbtest.models.User
 import com.srklagat.roomdbtest.data.UserDatabase
-import com.srklagat.roomdbtest.data.UserRepository
+import com.srklagat.roomdbtest.repository.UserRepository
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
@@ -26,5 +26,23 @@ class UserViewModel(application: Application): AndroidViewModel(application) {
             repository.addUser(user)
         }
     }
+
+    fun updateUser(user: User){
+        viewModelScope.launch (Dispatchers.IO){
+            repository.updateUser(user)
+        }
+    }
+    fun deleteUser(user: User){
+        viewModelScope.launch (Dispatchers.IO){
+            repository.deleteUser(user)
+        }
+    }
+    fun deleteAllUsers(){
+        viewModelScope.launch (Dispatchers.IO){
+            repository.deleteAllUsers()
+        }
+    }
+
+
 
 }
